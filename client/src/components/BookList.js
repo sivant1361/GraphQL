@@ -1,7 +1,20 @@
 import React, { Component } from "react";
+import { useQuery, gql } from '@apollo/client';
 
-class BookList extends Component {
-  render() {
+const getBooksQuery =gql`
+    {
+        books{
+            name
+            id
+        }
+    }
+`
+
+
+function BookList() {
+    const { loading, error, data } = useQuery(getBooksQuery);
+    console.log(data);
+    
     return(
         <div>
             <ul id="book-list">
@@ -9,7 +22,6 @@ class BookList extends Component {
             </ul>
         </div>
     );
-  }
 }
 
 export default BookList;
