@@ -13,8 +13,6 @@ export default function App() {
       <div id="main">
         <h1>AUTHOR AND BOOKS</h1>
         <BookList />
-        <BookList />
-        <BookList />
       </div>
     </ApolloProvider>
   );
